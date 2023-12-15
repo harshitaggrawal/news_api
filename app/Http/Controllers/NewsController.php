@@ -20,13 +20,6 @@ public function get_data(Request $request)
         $json = json_encode($xml);
         $data = json_decode($json, true);
         $data = $data['channel']['item'];
-
-
-
-        // echo "<pre>";
-        // print_r($data);
-        // die;
-
        
         return view('newsData',['data'=>$data]);
 
