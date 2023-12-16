@@ -15,7 +15,12 @@ use App\Http\Controllers\NewsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get("/",[NewsController::class,'index']);
 
-Route::get("/",[NewsController::class,'get_data']);
+Route::get("techNews",[NewsController::class,'get_data_tech']);
+Route::get("gamingNews",[NewsController::class,'get_data_gaming']);
+Route::get("webNews",[NewsController::class,'get_data_web']);
+Route::get("tvNews",[NewsController::class,'get_data_tv']);
+
