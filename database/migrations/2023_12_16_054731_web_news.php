@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->string('date');
+            $table->string('image');
             $table->text('description');
         });
     }

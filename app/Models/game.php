@@ -10,5 +10,5 @@ class game extends Model
     use HasFactory;
     protected $table = 'game_news'; 
     public $timestamps=false;
-    protected $fillable = ['title', 'date', 'description'];
+    protected $fillable = ['title', 'date','image','description'];
 }

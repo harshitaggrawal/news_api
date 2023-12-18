@@ -10,5 +10,5 @@ class web extends Model
     use HasFactory;
     protected $table = 'web_news'; 
     public $timestamps=false;
-    protected $fillable = ['title', 'date', 'description'];
+    protected $fillable = ['title', 'date','image', 'description'];
 }

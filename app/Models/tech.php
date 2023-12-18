@@ -10,5 +10,5 @@ class tech extends Model
     use HasFactory;
     protected $table = 'tech_news'; 
     public $timestamps=false;
-    protected $fillable = ['title', 'date', 'description'];
+    protected $fillable = ['title', 'date','image', 'description'];
 }

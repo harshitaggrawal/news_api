@@ -26,7 +26,7 @@
             font-size:45px;
         }
         .content{
-            padding:4rem 8%;
+            padding:2rem 8%;
             display:flex;
             flex-wrap:wrap;
             gap:30px;
@@ -53,6 +53,11 @@
             color:white;
             border-top-right-radius:15px;
         }
+        .content .news img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+        }
         .content .news p{
             color:#121010;
             font-size:20px;
@@ -62,93 +67,78 @@
         .content .news:hover{
             box-shadow:0 0 30px black;
         }
-        .header{
-            background: rgb(131,58,180);
-            color:white;
-            display:flex;
-            justify-content:space-between;
-            align-items :center;
-            padding:.7rem 9%;
-        }
-        .header a{
-            text-decoration:none;
-            color:white;
-            font-size:24px;
-            cursor: pointer;
-        }
-        .header a:hover{
-            text-shadow:0 0 10px white;
 
-        }
+       
     </style>
 </head>
 <body>
-      <div  class='header'>
+@include('header')
 
-      <a href="techNews">Tech News</a>
-      <a href="gamingNews">Gaming News</a>
-      <a href="webNews">Web Stories News</a>
-      <a href="tvNews">TV News</a>
 
-      </div>
 
 <!-- Tech News -->
-<h1 class="heading">Tech News</h1>
-<div class="content">
-@foreach($tech as $d)
+        <h1 class="heading">Tech News</h1>
+        <div class="content">
+        @foreach($tech as $d)
 
-<div class="news">
-    <h1>{{$d['title']}}</h1>
-    <h5>{{$d['date']}}</h5>
-    <p>{{$d['description']}}</p>
-    
-</div>
+            <div class="news">
+                <h1>{{$d['title']}}</h1>
+                <h5>{{$d['date']}}</h5>
+                <img src="{{$d['image']}}" alt="">
+                <p>{{$d['description']}}</p>              
+            </div>
 
-@endforeach
+        @endforeach
+        </div>
 
-<br>
 <!-- Game News -->
-<br>
+
 <h1 class="heading">Game News</h1>
 <div class="content">
-@foreach($game as $d)
+    @foreach($game as $d)
 
-<div class="news">
-    <h1>{{$d['title']}}</h1>
-    <h5>{{$d['date']}}</h5>
-    <p>{{$d['description']}}</p>
-    
-</div>
+        <div class="news">
+            <h1>{{$d['title']}}</h1>
+            <h5>{{$d['date']}}</h5>
+            <img src="{{$d['image']}}" alt="">
+            <p>{{$d['description']}}</p>
+            
+        </div>
 
-@endforeach
+    @endforeach
+    </div>
 
-<br>
-<h1 class="heading">web News</h1>
+    <!-- Web news -->
+
+<h1 class="heading">Web News</h1>
 <div class="content">
-@foreach($web as $d)
+    @foreach($web as $d)
 
-<div class="news">
-    <h1>{{$d['title']}}</h1>
-    <h5>{{$d['date']}}</h5>
-    <p>{{$d['description']}}</p>
-    
+    <div class="news">
+        <h1>{{$d['title']}}</h1>
+        <h5>{{$d['date']}}</h5>
+        <img src="{{$d['image']}}" alt="">
+        <p>{{$d['description']}}</p>
+        
+    </div>
+
+    @endforeach
 </div>
-
-@endforeach
-
 <br>
 
 <h1 class="heading">TV News</h1>
 <div class="content">
-@foreach($tv as $d)
+    @foreach($tv as $d)
 
-<div class="news">
-    <h1>{{$d['title']}}</h1>
-    <h5>{{$d['date']}}</h5>
-    <p>{{$d['description']}}</p>
-    
-</div>
+    <div class="news">
+        <h1>{{$d['title']}}</h1>
+        <h5>{{$d['date']}}</h5>
+        <img src="{{$d['image']}}" alt="">
+        <p>{{$d['description']}}</p>
+        
+    </div>
 
-@endforeach
+    @endforeach
+    </div>    
 </body>
 </html>

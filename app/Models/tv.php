@@ -10,5 +10,5 @@ class tv extends Model
     use HasFactory;
     protected $table = 'tv_news'; 
     public $timestamps=false;
-    protected $fillable = ['title', 'date', 'description'];
+    protected $fillable = ['title', 'date','image', 'description'];
 }

@@ -12,7 +12,7 @@
 
         }
         body{
-            padding:4rem 8%;
+           
             /* background: rgb(131,58,180); */
             /* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); */
 
@@ -25,6 +25,7 @@
             font-size:45px;
         }
         .content{
+            padding:2rem 8%;
             display:flex;
             flex-wrap:wrap;
             gap:30px;
@@ -68,6 +69,7 @@
     </style>
 </head>
 <body> 
+@include('header')
     <h1 class="heading">Today News</h1>
 <div class="content">
 @foreach($data as $d)

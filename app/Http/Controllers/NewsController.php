@@ -59,14 +59,15 @@ public function get_data_tech(Request $request)
 
    
 
-        // foreach($data as $d)
-        // {
-        //     tech::create([
-        //         'title' => $d['title'],
-        //         'date' => $d['pubDate'],
-        //         'description' => $d['description'],
-        //     ]);
-        // }
+        foreach($data as $d)
+        {
+            tech::updateOrCreate( ['title' => $d['title']],   
+                [
+                'date' => $d['pubDate'],
+                'image' => $d['image'] ,
+                'description' => $d['description'],
+            ]);
+        }
 
        
         // echo "<pre>";
@@ -104,14 +105,15 @@ public function get_data_gaming(Request $request)
             $data[$i]['image']= $dataImg[$i]['img']; 
         }
 
-        // foreach($data as $d)
-        // {
-        //     game::create([
-        //         'title' => $d['title'],
-        //         'date' => $d['pubDate'],
-        //         'description' => $d['description'],
-        //     ]);
-        // }
+        foreach($data as $d)
+        {
+            game::updateOrCreate( ['title' => $d['title']],   
+                [
+                'date' => $d['pubDate'],
+                'image' => $d['image'] ,
+                'description' => $d['description'],
+            ]);
+        }
        
        
         return view('newsData',['data'=>$data]);
@@ -146,14 +148,15 @@ public function get_data_web(Request $request)
             $data[$i]['image']= $dataImg[$i]['img']; 
         }
 
-        // foreach($data as $d)
-        // {
-        //     web::create([
-        //         'title' => $d['title'],
-        //         'date' => $d['pubDate'],
-        //         'description' => $d['description'],
-        //     ]);
-        // }
+        foreach($data as $d)
+        {
+            web::updateOrCreate( ['title' => $d['title']],   
+                [
+                'date' => $d['pubDate'],
+                'image' => $d['image'] ,
+                'description' => $d['description'],
+            ]);
+        }
        
         return view('newsData',['data'=>$data]);
 
@@ -184,14 +187,15 @@ public function get_data_tv(Request $request)
             $data[$i]['image']= $dataImg[$i]['img']; 
         }
 
-        // foreach($data as $d)
-        // {
-        //     tv::create([
-        //         'title' => $d['title'],
-        //         'date' => $d['pubDate'],
-        //         'description' => $d['description'],
-        //     ]);
-        // }
+        foreach($data as $d)
+        {
+            tv::updateOrCreate( ['title' => $d['title']],   
+                [
+                'date' => $d['pubDate'],
+                'image' => $d['image'] ,
+                'description' => $d['description'],
+            ]);
+        }
         
        
         return view('newsData',['data'=>$data]);
@@ -226,6 +230,7 @@ public function getImageUrlsFromRssFeed($response)
 
         foreach ($parsedData->channel->item as $item) {
             // Accessing media namespace for 'media:content'
+            
            
             $media = $item->xpath('media:content');
 
